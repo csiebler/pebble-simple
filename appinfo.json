@@ -1,0 +1,20 @@
+{
+  "uuid": "84a1a177-c79d-406e-992f-70a48dc3b1a2",
+  "shortName": "simplr",
+  "longName": "simplr",
+  "companyName": "Clemens Siebler",
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["basalt"],
+  "capabilities": [ "health" ],
+  "enableMultiJS": true,
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
