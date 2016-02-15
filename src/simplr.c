@@ -5,7 +5,6 @@ static TextLayer *s_date_layer;
 static TextLayer *s_battery_layer;
 static TextLayer *s_connection_layer;
 static TextLayer *s_steps_layer;
-static int padding = 2;
 
 /******************************
    Handlers for event updates
@@ -62,18 +61,19 @@ static void main_window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_frame(window_layer);
 
-  //s_battery_layer = text_layer_create(GRect(padding, -2, bounds.size.w-2*padding, 20));
-  s_battery_layer = text_layer_create(GRect(8, 8, bounds.size.w-2*8, 24));
 
+  s_battery_layer = text_layer_create(PBL_IF_ROUND_ELSE(
+    GRect(38, 12, bounds.size.w-76, 24),
+    GRect(8, 6, bounds.size.w-16, 24)));
   text_layer_set_text_color(s_battery_layer, GColorWhite);
   text_layer_set_background_color(s_battery_layer, GColorClear);
   text_layer_set_font(s_battery_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
   text_layer_set_text_alignment(s_battery_layer, GTextAlignmentRight);
   text_layer_set_text(s_battery_layer, "100%");
 
-  //s_date_layer = text_layer_create(GRect(padding, -2, bounds.size.w-2*padding, 20));
-  s_date_layer = text_layer_create(GRect(8, 8, bounds.size.w-2*8, 24));
-
+  s_date_layer = text_layer_create(PBL_IF_ROUND_ELSE(
+    GRect(38, 12, bounds.size.w-76, 24),
+    GRect(8, 6, bounds.size.w-16, 24)));
   text_layer_set_text_color(s_date_layer, GColorWhite);
   text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_font(s_date_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -93,7 +93,6 @@ static void main_window_load(Window *window) {
   text_layer_set_text_alignment(s_steps_layer, GTextAlignmentCenter);
   text_layer_set_text(s_steps_layer, "0 steps");
 
-  //s_connection_layer = text_layer_create(GRect(0, 144, bounds.size.w, 20));
   s_connection_layer = text_layer_create(GRect(0, 136, bounds.size.w, 20));
   text_layer_set_text_color(s_connection_layer, GColorWhite);
   text_layer_set_background_color(s_connection_layer, GColorClear);
