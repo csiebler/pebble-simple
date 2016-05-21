@@ -3,7 +3,7 @@
   "shortName": "simplr",
   "longName": "simplr",
   "companyName": "Clemens Siebler",
-  "versionLabel": "1.1",
+  "versionLabel": "1.2",
   "sdkVersion": "3",
   "targetPlatforms": ["basalt", "chalk"],
   "capabilities": [ "health" ],

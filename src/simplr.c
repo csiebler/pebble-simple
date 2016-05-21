@@ -63,8 +63,8 @@ static void main_window_load(Window *window) {
 
 
   s_battery_layer = text_layer_create(PBL_IF_ROUND_ELSE(
-    GRect(38, 12, bounds.size.w-76, 24),
-    GRect(8, 6, bounds.size.w-16, 24)));
+    GRect(38, 12, bounds.size.w-76, 32),
+    GRect(8, 6, bounds.size.w-16, 32)));
   text_layer_set_text_color(s_battery_layer, GColorWhite);
   text_layer_set_background_color(s_battery_layer, GColorClear);
   text_layer_set_font(s_battery_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -72,8 +72,8 @@ static void main_window_load(Window *window) {
   text_layer_set_text(s_battery_layer, "100%");
 
   s_date_layer = text_layer_create(PBL_IF_ROUND_ELSE(
-    GRect(38, 12, bounds.size.w-76, 24),
-    GRect(8, 6, bounds.size.w-16, 24)));
+    GRect(38, 12, bounds.size.w-76, 32),
+    GRect(8, 6, bounds.size.w-16, 32)));
   text_layer_set_text_color(s_date_layer, GColorWhite);
   text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_font(s_date_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
